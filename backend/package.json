@@ -1,0 +1,38 @@
+{
+  "name": "expensesapi",
+  "version": "1.0.0",
+  "description": "Expenses Tracker WebApp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sahashiharshit/Expenses-App.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Api",
+    "Backend",
+    "ExpenseTracker"
+  ],
+  "author": "Harshit Sah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahashiharshit/Expenses-App/issues"
+  },
+  "homepage": "https://github.com/sahashiharshit/Expenses-App#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mariadb": "^3.4.0",
+    "mysql2": "^3.11.4",
+    "sequelize": "^6.37.5"
+  }
+}
