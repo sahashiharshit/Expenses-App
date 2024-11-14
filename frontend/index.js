@@ -1,5 +1,4 @@
-const signupForm = document.querySelector("#signupForm");
-signupForm.addEventListener("submit", signupUser);
+
 
 async function signupUser(event) {
   event.preventDefault();
@@ -11,10 +10,26 @@ async function signupUser(event) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, email, password }),
   });
-  console.log(response);
+
+  
   if (response.ok) {
     document.getElementById("username").value = "";
     document.getElementById("userpassword").value = "";
     document.getElementById("useremail").value = "";
   }
+  
+}
+async function login(event){
+
+ event.preventDefault();
+  const password = document.querySelector("#userpassword").value;
+  const email = document.querySelector("#useremail").value;
+  await axios.post('http://localhost:3000/expense/login',{
+      email:email,
+      password:password
+  }).then((response)=>{
+    console.log(response);
+  }).catch((error)=>{
+    console.log(error);
+  })
 }
