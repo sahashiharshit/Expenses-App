@@ -9,45 +9,49 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
+  <script src="index.js"></script>
     <title>Login</title>
 </head>
 <body>
     <div class="container p-5">
         <div class="justify-content-center p-5 formdiv">
-          <form class="loginForm" id="loginForm" >
+          <form class="loginForm" id="loginForm" onsubmit="userlogin(event)">
             <div class="mb-3 form-floating">
             
                 <input
                   type="email"
-                  name="useremail"
-                  id="useremail"
+                  name="loginemail"
+                  id="loginemail"
                   class="form-control"
                   placeholder="example@email.com"
                   required
                 />
-                <label for="useremail" class="form-label">Email</label>
+                <label for="loginemail" class="form-label">Email</label>
               </div>
   
             <div class="mb-3 form-floating">
              
               <input
                 type="password"
-                name="userpassword"
-                id="userpassword"
+                name="loginpassword"
+                id="loginpassword"
                 class="form-control"
                 placeholder="password"
                 required
               />
-              <label for="userpassword" class="form-label">Password</label>
+              <label for="loginpassword" class="form-label">Password</label>
             </div>
   
             
   
-            <button id="login" class="btn btn-primary" onsubmit="login(event)">Login</button>
+            <button id="login" class="btn btn-primary" >Login</button>
+            <a href="index.html" class="btn btn-outline-primary">Signup</a>
           </form>
         </div>
+        <div id="error"></div>
       </div>
+      
 </body>
-<script src="index.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

@@ -11,12 +11,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="index.js"></script>
     
   </head>
   <body>
     <div class="container p-5">
       <div class="justify-content-center p-5 formdiv">
-        <form class="signupForm" id="signupForm" >
+        <form class="signupForm" id="signupForm" onsubmit="signupuser(event)" >
           <div class="mb-3 form-floating">
             
             <input
@@ -56,13 +57,15 @@
             <label for="useremail" class="form-label">Email</label>
           </div>
 
-          <button type="submit" id="signup" class="btn btn-outline-primary" onsubmit="singupUser(event)">Sign Up</button>
-          <div class="mb-3">
-            <a href="login.html">Login</a>
-            </div>
+          <button id="signup" class="btn btn-primary" >Sign Up</button>
+         
+            <a href="login.html" class="btn btn-outline-primary">Login</a>
+           
         </form>
       </div>
+      <div id="error"></div>
     </div>
   </body>
-  <script src="index.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

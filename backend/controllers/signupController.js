@@ -11,11 +11,19 @@ exports.signupUser = async (req, res, next) => {
       email: email,
       password: password,
     });
-    res.status(200).json(newUser);
+    res.status(200).json({data:newUser});
   } catch (error) {
-    res.status(500).json({
-      message: "Error in Signing up user.",
-      error: error,
-    });
+    if(error.name==="SequelizeUniqueConstraintError"){
+      res.status(500).json({
+        message: "Email id already exist",
+        error: error,
+      });
+    }else{
+      res.status(500).json({
+        message: "Error in Signing up user.",
+        error: error,
+      });
+    }
+   
   }
 };
